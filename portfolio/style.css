@@ -43,6 +43,12 @@ main h2{
 }
 #uebermich{
     margin-bottom: 0px;
+   font-weight: bold;
+   line-height: 2.0;
+}
+#lebenslauf {
+    line-height: 2.0;
+    font-weight: bold;
 }
 ul{
     
@@ -80,4 +86,8 @@ ul{
     margin-right: auto;
     width:100px;
     height:100px;
+}
+#kontaktfeld img:hover{
+    width:120px;
+    height:120px;
 }

@@ -22,7 +22,7 @@ var portfolio;
         let mailButton = document.getElementById("mail");
         mailButton.addEventListener("click", mailKlick);
         function mailKlick(_event) {
-            console.log("Email schicken"); //Noch verändern!!
+            window.location.href = "mailto:marcelritterbuisan@gmail.com";
         }
         let inhaltDiv = document.createElement("div");
         inhaltDiv.setAttribute("id", "inhaltDiv");

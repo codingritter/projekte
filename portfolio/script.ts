@@ -24,7 +24,7 @@ namespace portfolio {
         let mailButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("mail");
         mailButton.addEventListener("click", mailKlick);
         function mailKlick(_event: Event): void { 
-            console.log("Email schicken"); //Noch verändern!!
+            window.location.href = "mailto:marcelritterbuisan@gmail.com";
         }
 
 
