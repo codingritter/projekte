@@ -62,7 +62,7 @@ ul{
     margin-top: 50px;
 }
 #beschreibung {
-    margin-top: 50px;
+    margin-top: 30px;
    
     width: 300px;
 }
@@ -73,4 +73,11 @@ ul{
 }
 #elementDiv{
     margin-right: 40px;
+}
+#kontaktfeld img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:100px;
+    height:100px;
 }

@@ -4,6 +4,26 @@ var portfolio;
     function maintextAufrufen() {
         let uebermichHtml = document.getElementById("uebermich");
         uebermichHtml.innerHTML = portfolio.maintext[0].uebermich;
+        let uebermichButton = document.getElementById("ueberMichButton");
+        uebermichButton.addEventListener("click", uebermichKlick);
+        function uebermichKlick(_event) {
+            window.location.href = "#uebermichAnker";
+        }
+        let projekteButton = document.getElementById("projekteButton");
+        projekteButton.addEventListener("click", projekteKlick);
+        function projekteKlick(_event) {
+            window.location.href = "#projekteAnker";
+        }
+        let kontaktButton = document.getElementById("kontaktButton");
+        kontaktButton.addEventListener("click", kontaktKlick);
+        function kontaktKlick(_event) {
+            window.location.href = "#kontaktAnker";
+        }
+        let mailButton = document.getElementById("mail");
+        mailButton.addEventListener("click", mailKlick);
+        function mailKlick(_event) {
+            console.log("Email schicken"); //Noch verändern!!
+        }
         let inhaltDiv = document.createElement("div");
         inhaltDiv.setAttribute("id", "inhaltDiv");
         for (let i = 1; i < portfolio.projekte.length; i++) {

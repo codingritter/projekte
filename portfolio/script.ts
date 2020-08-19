@@ -3,6 +3,31 @@ namespace portfolio {
         let uebermichHtml: HTMLElement = <HTMLElement>document.getElementById("uebermich");
         uebermichHtml.innerHTML = maintext[0].uebermich;
 
+        let uebermichButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("ueberMichButton");
+        uebermichButton.addEventListener("click", uebermichKlick);
+        function uebermichKlick(_event: Event): void { 
+            window.location.href = "#uebermichAnker";
+        }
+
+        let projekteButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("projekteButton");
+        projekteButton.addEventListener("click", projekteKlick);
+        function projekteKlick(_event: Event): void { 
+            window.location.href = "#projekteAnker";
+        }
+
+        let kontaktButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("kontaktButton");
+        kontaktButton.addEventListener("click", kontaktKlick);
+        function kontaktKlick(_event: Event): void { 
+            window.location.href = "#kontaktAnker";
+        }
+
+        let mailButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("mail");
+        mailButton.addEventListener("click", mailKlick);
+        function mailKlick(_event: Event): void { 
+            console.log("Email schicken"); //Noch verändern!!
+        }
+
+
         let inhaltDiv: HTMLDivElement = document.createElement("div");
         inhaltDiv.setAttribute("id", "inhaltDiv");
         for (let i: number = 1; i < projekte.length; i++) {
