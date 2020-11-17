@@ -1,7 +1,7 @@
 namespace portfolio {
     export function maintextAufrufen(): void {
         let uebermichHtml: HTMLElement = <HTMLElement>document.getElementById("uebermich");
-        uebermichHtml.innerHTML = maintext[0].uebermich;
+        uebermichHtml.innerHTML = kategorien.informationen.uebermich;
 
         let uebermichButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("ueberMichButton");
         uebermichButton.addEventListener("click", uebermichKlick);
@@ -26,31 +26,52 @@ namespace portfolio {
         function mailKlick(_event: Event): void { 
             window.location.href = "mailto:marcelritterbuisan@gmail.com";
         }
+        let kurseDiv: HTMLDivElement = document.createElement("div");
+        kurseDiv.setAttribute("id", "inhaltDiv");
 
-
-        let inhaltDiv: HTMLDivElement = document.createElement("div");
-        inhaltDiv.setAttribute("id", "inhaltDiv");
-        for (let i: number = 1; i < projekte.length; i++) {
+        for (let i: number = 0; i < kategorien.absolvierteKurse.length; i++) {
             let element: HTMLDivElement = document.createElement("div");
             element.setAttribute("id", "elementDiv");
-            inhaltDiv.appendChild(element);
+            kurseDiv.appendChild(element);
             let name: HTMLElement = document.createElement("h2");
-            name.innerHTML = projekte[i].name;
+            name.innerHTML = kategorien.absolvierteKurse[i].name;
             element.appendChild(name);
             let bild: HTMLImageElement = document.createElement("img");
-            bild.setAttribute("src", projekte[i].bild);
+            bild.setAttribute("src", kategorien.absolvierteKurse[i].bild);
             bild.addEventListener("click", bildKlick);
             element.appendChild(bild);
             let beschreibung: HTMLElement = document.createElement("p");
             beschreibung.setAttribute("id", "beschreibung");
-            beschreibung.innerHTML = projekte[i].beschreibung;
+            beschreibung.innerHTML = kategorien.absolvierteKurse[i].beschreibung;
+            element.appendChild(beschreibung);
+            function bildKlick(_event: Event): void { 
+               window.open(kategorien.absolvierteKurse[i].link, "_blank"); 
+            }
+        }
+        document.getElementById("kurse")?.appendChild(kurseDiv);
+
+        let inhaltDiv: HTMLDivElement = document.createElement("div");
+        inhaltDiv.setAttribute("id", "inhaltDiv");
+        for (let i: number = 0; i < kategorien.projekte.length; i++) {
+            let element: HTMLDivElement = document.createElement("div");
+            element.setAttribute("id", "elementDiv");
+            inhaltDiv.appendChild(element);
+            let name: HTMLElement = document.createElement("h2");
+            name.innerHTML = kategorien.projekte[i].name;
+            element.appendChild(name);
+            let bild: HTMLImageElement = document.createElement("img");
+            bild.setAttribute("src", kategorien.projekte[i].bild);
+            bild.addEventListener("click", bildKlick);
+            element.appendChild(bild);
+            let beschreibung: HTMLElement = document.createElement("p");
+            beschreibung.setAttribute("id", "beschreibung");
+            beschreibung.innerHTML = kategorien.projekte[i].beschreibung;
             element.appendChild(beschreibung);
             
             function bildKlick(_event: Event): void { 
-                window.location.href = projekte[i].link;
+                window.open(kategorien.projekte[i].link, "_blank");
             }
-
         }
-        document.getElementById("main")?.appendChild(inhaltDiv);
+        document.getElementById("projekte")?.appendChild(inhaltDiv);
     }
 }
