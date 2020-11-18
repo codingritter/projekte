@@ -26,23 +26,23 @@ var portfolio;
         }
         let kurseDiv = document.createElement("div");
         kurseDiv.setAttribute("id", "inhaltDiv");
-        for (let i = 0; i < portfolio.kategorien.absolvierteKurse.length; i++) {
+        for (let i = 0; i < portfolio.kategorien.weiterbildungen.length; i++) {
             let element = document.createElement("div");
             element.setAttribute("id", "elementDiv");
             kurseDiv.appendChild(element);
             let name = document.createElement("h2");
-            name.innerHTML = portfolio.kategorien.absolvierteKurse[i].name;
+            name.innerHTML = portfolio.kategorien.weiterbildungen[i].name;
             element.appendChild(name);
             let bild = document.createElement("img");
-            bild.setAttribute("src", portfolio.kategorien.absolvierteKurse[i].bild);
+            bild.setAttribute("src", portfolio.kategorien.weiterbildungen[i].bild);
             bild.addEventListener("click", bildKlick);
             element.appendChild(bild);
             let beschreibung = document.createElement("p");
             beschreibung.setAttribute("id", "beschreibung");
-            beschreibung.innerHTML = portfolio.kategorien.absolvierteKurse[i].beschreibung;
+            beschreibung.innerHTML = portfolio.kategorien.weiterbildungen[i].beschreibung;
             element.appendChild(beschreibung);
             function bildKlick(_event) {
-                window.open(portfolio.kategorien.absolvierteKurse[i].link, "_blank");
+                window.open(portfolio.kategorien.weiterbildungen[i].link, "_blank");
             }
         }
         document.getElementById("kurse")?.appendChild(kurseDiv);

@@ -5,47 +5,47 @@ namespace portfolio {
 
         let uebermichButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("ueberMichButton");
         uebermichButton.addEventListener("click", uebermichKlick);
-        function uebermichKlick(_event: Event): void { 
+        function uebermichKlick(_event: Event): void {
             window.location.href = "#uebermichAnker";
         }
 
         let projekteButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("projekteButton");
         projekteButton.addEventListener("click", projekteKlick);
-        function projekteKlick(_event: Event): void { 
+        function projekteKlick(_event: Event): void {
             window.location.href = "#projekteAnker";
         }
 
         let kontaktButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("kontaktButton");
         kontaktButton.addEventListener("click", kontaktKlick);
-        function kontaktKlick(_event: Event): void { 
+        function kontaktKlick(_event: Event): void {
             window.location.href = "#kontaktAnker";
         }
 
         let mailButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("mail");
         mailButton.addEventListener("click", mailKlick);
-        function mailKlick(_event: Event): void { 
+        function mailKlick(_event: Event): void {
             window.location.href = "mailto:marcelritterbuisan@gmail.com";
         }
         let kurseDiv: HTMLDivElement = document.createElement("div");
         kurseDiv.setAttribute("id", "inhaltDiv");
 
-        for (let i: number = 0; i < kategorien.absolvierteKurse.length; i++) {
+        for (let i: number = 0; i < kategorien.weiterbildungen.length; i++) {
             let element: HTMLDivElement = document.createElement("div");
             element.setAttribute("id", "elementDiv");
             kurseDiv.appendChild(element);
             let name: HTMLElement = document.createElement("h2");
-            name.innerHTML = kategorien.absolvierteKurse[i].name;
+            name.innerHTML = kategorien.weiterbildungen[i].name;
             element.appendChild(name);
             let bild: HTMLImageElement = document.createElement("img");
-            bild.setAttribute("src", kategorien.absolvierteKurse[i].bild);
+            bild.setAttribute("src", kategorien.weiterbildungen[i].bild);
             bild.addEventListener("click", bildKlick);
             element.appendChild(bild);
             let beschreibung: HTMLElement = document.createElement("p");
             beschreibung.setAttribute("id", "beschreibung");
-            beschreibung.innerHTML = kategorien.absolvierteKurse[i].beschreibung;
+            beschreibung.innerHTML = kategorien.weiterbildungen[i].beschreibung;
             element.appendChild(beschreibung);
-            function bildKlick(_event: Event): void { 
-               window.open(kategorien.absolvierteKurse[i].link, "_blank"); 
+            function bildKlick(_event: Event): void {
+                window.open(kategorien.weiterbildungen[i].link, "_blank");
             }
         }
         document.getElementById("kurse")?.appendChild(kurseDiv);
@@ -67,8 +67,8 @@ namespace portfolio {
             beschreibung.setAttribute("id", "beschreibung");
             beschreibung.innerHTML = kategorien.projekte[i].beschreibung;
             element.appendChild(beschreibung);
-            
-            function bildKlick(_event: Event): void { 
+
+            function bildKlick(_event: Event): void {
                 window.open(kategorien.projekte[i].link, "_blank");
             }
         }

@@ -10,7 +10,7 @@ namespace portfolio {
             link: string;
         
         }];
-        absolvierteKurse: [{
+        weiterbildungen: [{
             name: string;
             bild: string;
             beschreibung: string;
